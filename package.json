@@ -19,7 +19,9 @@
     "watch:sassprefixer": "onchange -d 100 sass/* -- npm-run-all compile-sass autoprefix",
     "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
     "compile-sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "autoprefix": "autoprefixer-cli css/style.css"
+    "autoprefix": "autoprefixer-cli css/style.css",
+    "watch-styleguide": "npm-run-all -p watch:sassprefixer watch-styleguide:browsersync",
+    "watch-styleguide:browsersync": "browser-sync start --server --index styleguide.html --files css/*.css *.html"
   },
   "repository": {
     "type": "git",

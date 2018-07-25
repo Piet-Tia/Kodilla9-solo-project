@@ -4,6 +4,9 @@
 @import "normalize";
 @import "layout";
 
+/* Fonts */
+@import "glyphter";
+
 /* Components */
 // @import "components/form_field";
 
@@ -12,3 +15,42 @@
 
 /* Pages / Views */
 // @import "pages/registration";
+
+.container {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.stats {
+    //border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.stats__column {
+    //border: 1px solid green;
+    width: 45%;
+}
+
+.stats__row {
+    border-bottom: 1px solid grey;
+    display:flex;
+    justify-content: space-between;
+    padding: 2px;
+}
+
+.links__row {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid blue;
+}
+
+.links__row > span {
+    border: 1px solid red;
+    display: inline-block;
+}
+
+.links__left-column {
+    max-width: 200px;
+}
