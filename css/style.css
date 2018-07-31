@@ -468,12 +468,99 @@ template {
 /* Components */
 /* Sections */
 /* Pages / Views */
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: 1px solid darkorange;
+}
+
+.button--orange {
+  display: inline-block;
+  border-radius: 4px;
+  padding: 5px 10px;
+  border: 1px solid darkorange;
+  background-color: darkorange;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Helvetica, Arial;
+}
+
 .container {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 70%;
 }
 
-.stats {
+/*** STATS ***/
+.stats__date-selection {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.stats__date-selection-window {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 400px;
+  padding: 5px 20px;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+[class^="stats__date--"] {
+  padding: 5px 20px;
+}
+
+.stats__date--end {
+  border-left: 1px solid #999;
+}
+
+.stats__refresh-icon {
+  margin: 0 10px;
+  padding: 10px;
+}
+
+/*** STATS -> CALENDAR-ICON ***/
+[class^=calendar-icon__button] {
+  border-bottom: 1px solid #777;
+}
+
+.calendar-icon {
+  padding: 5px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+.calendar-icon__row {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.calendar-icon__button--big {
+  width: 17px;
+  height: 4px;
+  border: 1px solid #777;
+}
+
+.calendar-icon__button {
+  width: 5px;
+  height: 3px;
+  margin: 1px 1px 0 0;
+}
+
+/*** STATS__TABLE ***/
+.stats__table {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -493,20 +580,61 @@ template {
   padding: 2px;
 }
 
+/*** LINKS ***/
 .links__row {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  border: 1px solid blue;
+  border-bottom: 1px solid grey;
+  transition: 0.2s;
+}
+
+.links__row:hover {
+  background: #ccc;
+}
+
+.links__row:hover .links__right-column {
+  opacity: 1;
 }
 
 .links__row > span {
-  border: 1px solid red;
-  display: inline-block;
+  padding: 10px;
 }
 
 .links__left-column {
-  max-width: 200px;
+  width: 400px;
+  font-weight: 600;
+}
+
+.links__middle-column {
+  width: calc(100% - 200px);
+}
+
+.links__links {
+  text-decoration: none;
+  color: #000;
+}
+
+.links__right-column {
+  width: 100px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  opacity: 0;
+  transition: 0.2s;
+}
+
+.links__right-column > span {
+  cursor: pointer;
+}
+
+.icon-links {
+  color: orange;
+}
+
+.icon-trash {
+  color: #444;
 }
 /*# sourceMappingURL=style.css.map */

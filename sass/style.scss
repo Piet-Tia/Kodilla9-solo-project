@@ -16,41 +16,168 @@
 /* Pages / Views */
 // @import "pages/registration";
 
+@mixin button-class {
+    display: inline-block; 
+    border-radius: 4px;
+    padding: 5px 10px;
+    border: 1px solid darkorange;
+}
+
+.button { 
+    @include button-class;
+    ;
+}
+    
+.button--orange {
+    @include button-class;
+    background-color: darkorange;
+    color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $paragraph-font;
+}
+
 .container {
-    margin: 0 auto;
+    margin: 20px auto;
     width: 70%;
 }
 
-.stats {
-    //border: 1px solid red;
+
+/*** STATS ***/
+
+.stats__date-selection {
+    display: flex;
+    justify-content: center;
+}
+
+.stats__date-selection-window {
     display: flex;
     justify-content: space-between;
-    
+    width: 400px;
+    padding: 5px 20px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+[class^="stats__date--"] {
+    padding: 5px 20px;
+}
+
+.stats__date--end {
+    border-left: 1px solid #999;
+}
+
+
+.stats__refresh-icon {
+    margin: 0 10px; 
+    padding: 10px;
+}
+
+/*** STATS -> CALENDAR-ICON ***/
+
+[class^=calendar-icon__button] {
+    border-bottom: 1px solid #777;
+}
+
+.calendar-icon {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-icon__row {
+    display: flex;
+}
+
+.calendar-icon__button--big {
+    width: 17px;
+    height: 4px;
+    border: 1px solid #777;
+}
+
+.calendar-icon__button {
+    width: 5px;
+    height: 3px;
+    margin: 1px 1px 0 0;
+}
+
+/*** STATS__TABLE ***/
+
+.stats__table {
+    display: flex;
+    justify-content: space-between;
 }
 
 .stats__column {
-    //border: 1px solid green;
     width: 45%;
 }
 
 .stats__row {
     border-bottom: 1px solid grey;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     padding: 2px;
 }
 
+
+/*** LINKS ***/
+
 .links__row {
     display: flex;
     justify-content: space-between;
-    border: 1px solid blue;
+    border-bottom: 1px solid grey;
+    transition: 0.2s;
+    
+    &:hover {
+        background: #ccc;
+
+        .links__right-column {
+            opacity: 1;
+        }
+    }
+    >span {
+        padding: 10px;
+    }
 }
 
-.links__row > span {
-    border: 1px solid red;
-    display: inline-block;
-}
+
 
 .links__left-column {
-    max-width: 200px;
+    width: 400px;
+    font-weight: 600;
 }
+
+.links__middle-column {
+    width: calc(100% - 200px);
+}
+
+.links__links {
+    text-decoration: none;
+    color: #000;
+}
+
+.links__right-column {
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    transition: 0.2s;
+
+    >span {
+        cursor: pointer;
+    }
+}
+
+.icon-links {
+    color: orange;
+}
+
+.icon-trash {
+    color: #444;
+}
+
