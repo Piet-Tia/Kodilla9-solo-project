@@ -21,17 +21,28 @@
     border-radius: 4px;
     padding: 5px 10px;
     border: 1px solid darkorange;
+    transition: 0.2s;
+
 }
 
 .button { 
     @include button-class;
-    ;
+
+    &:hover {
+        background: #ddd;
+        border: 1px solid orange;
+    }
 }
     
 .button--orange {
     @include button-class;
     background-color: darkorange;
     color: white;
+
+    &:hover {
+        background: orange;
+        border: 1px solid orange;
+    }
 }
 
 * {
