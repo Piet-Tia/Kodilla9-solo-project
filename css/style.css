@@ -870,13 +870,29 @@ main {
   display: flex;
   -ms-flex-align: center;
       align-items: center;
+  position: relative;
 }
 
 .sidebar__footer-person-image {
   border-radius: 50%;
+  position: absolute;
+  top: 10px;
+}
+
+.sidebar__footer-person-dot {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  width: 10px;
+  height: 10px;
+  background: green;
+  border-radius: 50%;
 }
 
 .sidebar__footer-person-name {
+  position: absolute;
+  left: 50px;
+  top: 25px;
   padding: 0 10px;
   font-size: 12px;
 }
