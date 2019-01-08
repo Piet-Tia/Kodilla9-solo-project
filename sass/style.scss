@@ -17,167 +17,354 @@
 // @import "pages/registration";
 
 @mixin button-class {
-    display: inline-block; 
-    border-radius: 4px;
-    padding: 5px 10px;
-    border: 1px solid darkorange;
+	display: inline-block;
+	border-radius: 4px;
+	padding: 5px 10px;
+	border: 1px solid darkorange;
 }
 
-.button { 
-    @include button-class;
-    ;
+.button {
+	@include button-class;
+	;
 }
-    
+
 .button--orange {
-    @include button-class;
-    background-color: darkorange;
-    color: white;
+	@include button-class;
+	background-color: darkorange;
+	color: white;
+	margin: 20px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: orange;
+	}
 }
 
-* {
-    box-sizing: border-box;
+.button-space {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 
 body {
-    font-family: $paragraph-font;
+	font-family: $paragraph-font;
+	background: #ccc;
 }
 
-.container {
-    margin: 20px auto;
-    width: 70%;
+main {
+	position: fixed;
+	top: 80px;
+	bottom: 0;
+	left: 220px;
+	right: 20px;
+	background: #ccc;
+	padding: 10px;
+	overflow: auto;
 }
+
+.stats, .links {
+	background: #fff;
+}
+
+
+/*** NAV - SIDEBAR ***/
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 200px;
+	background: #000;
+	color: #aaa;
+}
+
+.sidebar__top-bar {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sidebar__logo {
+	padding: 10px;
+	font-size: 20px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidebar__hamburger {
+	padding: 10px;
+	color: #ccc;
+	font-size: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sidebar__nav-link {
+	padding: 10px;
+	font-size: 14px;
+	font-weight: 100;
+	border-left: 5px solid #000;
+
+	&:hover {
+		border-left: 5px solid orange;
+		background: #555;
+		color: #fff;
+	}
+}
+
+.sidebar__nav-link>i {
+	padding-right: 10px;
+}
+
+.sidebar__footer {
+	margin-top: 20px;
+	border-top: 1px solid #ccc;
+	padding: 20px 10px;
+}
+
+.sidebar__footer-title {
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 900;
+}
+
+.sidebar__footer-person {
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+}
+
+.sidebar__footer-person-image {
+	border-radius: 50%;
+}
+
+.sidebar__footer-person-name {
+	padding: 0 10px;
+	font-size: 12px;
+
+}
+
+
+/*** TOPBAR ***/
+
+.topbar {
+	position: fixed;
+	top: 0;
+	left: 200px;
+	right: 0;
+	height: 60px;
+	background: #eee;
+	display: flex;
+	justify-content: flex-end;
+	color: #555;
+	border: 1px solid #999;
+}
+
+.topbar__field {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding: 20px;
+	border-left: 1px solid #999;
+	cursor: pointer;
+
+	i {
+		padding: 0 5px;
+	}
+
+	&:hover {
+		background: #ddd;
+	}
+}
+
+
 
 
 /*** STATS ***/
 
+.stats {
+	position: relative;
+}
+
+.stats__title-space {
+	margin-bottom: 20px;
+}
+
+.stats__title-space:after {
+	position:absolute;
+	left:0;
+	right: 0;
+	top: 50px;
+	content: " ";
+    display:block;
+	border-bottom: 1px solid #999;
+}
+
+.stats__title {
+	text-transform: uppercase;
+	color: #777;
+	font-size: 14px;
+	font-weight: 900;
+}
+
 .stats__date-selection {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
+	margin: 40px 0;
+}
+
+.stats__date-selection:after {
+	position:absolute;
+	left:0;
+	right: 0;
+	top: 140px;
+	content: " ";
+    display:block;
+	border-bottom: 1px solid #999;
 }
 
 .stats__date-selection-window {
-    display: flex;
-    justify-content: space-between;
-    width: 400px;
-    padding: 5px 20px;
-    border: 1px solid #999;
-    border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	width: 400px;
+	padding: 5px 20px;
+	border: 1px solid #999;
+	border-radius: 4px;
 }
 
 [class^="stats__date--"] {
-    padding: 5px 20px;
+	padding: 5px 20px;
 }
 
 .stats__date--end {
-    border-left: 1px solid #999;
+	border-left: 1px solid #999;
 }
 
 
 .stats__refresh-icon {
-    margin: 0 10px; 
-    padding: 10px;
+	margin: 0 10px;
+	padding: 10px;
 }
 
 /*** STATS -> CALENDAR-ICON ***/
 
 [class^=calendar-icon__button] {
-    border-bottom: 1px solid #777;
+	border-bottom: 1px solid #777;
 }
 
 .calendar-icon {
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
 }
 
 .calendar-icon__row {
-    display: flex;
+	display: flex;
 }
 
 .calendar-icon__button--big {
-    width: 17px;
-    height: 4px;
-    border: 1px solid #777;
+	width: 17px;
+	height: 4px;
+	border: 1px solid #777;
 }
 
 .calendar-icon__button {
-    width: 5px;
-    height: 3px;
-    margin: 1px 1px 0 0;
+	width: 5px;
+	height: 3px;
+	margin: 1px 1px 0 0;
 }
 
 /*** STATS__TABLE ***/
 
 .stats__table {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .stats__column {
-    width: 45%;
+	width: 45%;
 }
 
 .stats__row {
-    border-bottom: 1px solid grey;
-    display: flex;
-    justify-content: space-between;
-    padding: 2px;
+	border-bottom: 1px solid grey;
+	display: flex;
+	justify-content: space-between;
+	padding: 2px;
 }
 
+/*** STATS__CHART ***/
+
+.stats__chart {
+	width: 100;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.stats__chart-title {
+	font-weight: 900;
+	color: #555;
+	padding: 20px 0;
+	align-self: flex-start;
+}
 
 /*** LINKS ***/
 
 .links__row {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid grey;
-    transition: 0.2s;
-    
-    &:hover {
-        background: #ccc;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid grey;
+	transition: 0.2s;
 
-        .links__right-column {
-            opacity: 1;
-        }
-    }
-    >span {
-        padding: 10px;
-    }
+	&:hover {
+		background: #ccc;
+
+		.links__right-column {
+			opacity: 1;
+		}
+	}
+
+	>span {
+		padding: 10px;
+	}
 }
 
 
 
 .links__left-column {
-    width: 400px;
-    font-weight: 600;
+	width: 400px;
+	font-weight: 600;
 }
 
 .links__middle-column {
-    width: calc(100% - 200px);
+	width: calc(100% - 200px);
 }
 
 .links__links {
-    text-decoration: none;
-    color: #000;
+	text-decoration: none;
+	color: #000;
 }
 
 .links__right-column {
-    width: 100px;
-    display: flex;
-    justify-content: space-around;
-    opacity: 0;
-    transition: 0.2s;
+	width: 100px;
+	display: flex;
+	justify-content: space-around;
+	opacity: 0;
+	transition: 0.2s;
 
-    >span {
-        cursor: pointer;
-    }
+	>span {
+		cursor: pointer;
+	}
 }
 
-.icon-links {
-    color: orange;
+.links__icon-links {
+	color: orange;
 }
 
-.icon-trash {
-    color: #444;
+.links__icon-trash {
+	color: #444;
 }
-
