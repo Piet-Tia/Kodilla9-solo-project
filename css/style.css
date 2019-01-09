@@ -1060,7 +1060,7 @@ main {
 
 /*** STATS__CHART ***/
 .stats__chart {
-  width: 100;
+  width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -1171,9 +1171,13 @@ main {
     margin-top: 40px;
     border: none;
   }
+  .sidebar__nav-link {
+    padding: 5px;
+  }
   .topbar__field--in-sidebar {
     border-top: 1px solid #555;
     border-left: none;
+    padding: 10px;
   }
   .topbar__field--in-sidebar:hover {
     background: #555;
