@@ -11,29 +11,41 @@
 </head>
 
 <body>
-	<nav class='sidebar'>
-		<div class="sidebar__top-bar">
-			<div class="sidebar__logo">Just do it</div>
-			<div class="sidebar__hamburger"><i class="fas fa-bars"></i></div>
-		</div>
-		<div class="sidebar__main-section">
-			<div class="sidebar__nav-link"><i class='icon-general'></i>General</div>
-			<div class="sidebar__nav-link"><i class='icon-details'></i>Details</div>
-			<div class="sidebar__nav-link"><i class='icon-links'></i>Links</div>
-			<div class="sidebar__nav-link"><i class='icon-banners'></i>Banners</div>
-			<div class="sidebar__nav-link"><i class='icon-personaldata'></i>Personal data</div>
-			<div class="sidebar__nav-link"><i class='icon-payout'></i>Payout</div>
-			<div class="sidebar__nav-link"><i class='icon-postback'></i>Postback</div>
-		</div>
-		<div class="sidebar__footer">
-			<div class="sidebar__footer-title">Your manager</div>
-			<div class="sidebar__footer-person">
-				<img class='sidebar__footer-person-image' src='https://via.placeholder.com/40/FFFFFF/BBBBBB?Text=Person'>
-				<span class='sidebar__footer-person-dot'></span>
-				<span class='sidebar__footer-person-name'>Mikhael E.</span>
+	<!-- checkbox hack for CSS-only click event simulation on navbar -->
+	<input type="checkbox" id="btnControl" />
+	<label class="btn" for="btnControl">
+
+		<nav class='sidebar'>
+			<div class="sidebar__top-part">
+				<div class="sidebar__logo">Just do it</div>
+				<div class="sidebar__hamburger"><i class="fas fa-bars"></i></div>
 			</div>
-		</div>
-	</nav>
+			<div class="sidebar__main-section">
+				<div class="sidebar__nav-link"><i class='icon-general'></i>General</div>
+				<div class="sidebar__nav-link"><i class='icon-details'></i>Details</div>
+				<div class="sidebar__nav-link"><i class='icon-links'></i>Links</div>
+				<div class="sidebar__nav-link"><i class='icon-banners'></i>Banners</div>
+				<div class="sidebar__nav-link"><i class='icon-personaldata'></i>Personal data</div>
+				<div class="sidebar__nav-link"><i class='icon-payout'></i>Payout</div>
+				<div class="sidebar__nav-link"><i class='icon-postback'></i>Postback</div>
+			</div>
+			<div class="sidebar__footer">
+				<div class="sidebar__footer-title">Your manager</div>
+				<div class="sidebar__footer-person">
+					<img class='sidebar__footer-person-image' src='https://via.placeholder.com/40/FFFFFF/BBBBBB?Text=Person'>
+					<span class='sidebar__footer-person-dot'></span>
+					<span class='sidebar__footer-person-name'>Mikhael E.</span>
+				</div>
+			</div>
+			<div class="topbar topbar--in-sidebar">
+				<div class="topbar__field topbar__field--in-sidebar topbar__wallet"><i class='icon-wallet'></i>$1,500.00<i class='icon-arrow-down-small'></i></div>
+				<div class="topbar__field topbar__field--in-sidebar topbar__notifications"><i class='icon-notification'></i></div>
+				<div class="topbar__field topbar__field--in-sidebar topbar__user"><i class='icon-profile'></i>Leonardo Dicaprio</div>
+				<div class="topbar__field topbar__field--in-sidebar topbar__logout"><i class='icon-quit'></i></div>
+			</div>
+		</nav>
+
+	</label>
 
 	<div class="topbar">
 		<div class="topbar__field topbar__wallet"><i class='icon-wallet'></i>$1,500.00<i class='icon-arrow-down-small'></i></div>

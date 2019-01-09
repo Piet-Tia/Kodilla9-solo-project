@@ -23,6 +23,8 @@
 	border: 1px solid darkorange;
 }
 
+
+
 .button {
 	@include button-class;
 	;
@@ -53,16 +55,17 @@ body {
 
 main {
 	position: fixed;
-	top: 80px;
+	top: 60px;
 	bottom: 0;
 	left: 220px;
-	right: 20px;
+	right: 0px;
 	background: #ccc;
 	padding: 10px;
 	overflow: auto;
 }
 
-.stats, .links {
+.stats,
+.links {
 	background: #fff;
 }
 
@@ -79,7 +82,7 @@ main {
 	color: #aaa;
 }
 
-.sidebar__top-bar {
+.sidebar__top-part {
 	display: flex;
 	justify-content: space-between;
 }
@@ -197,6 +200,10 @@ main {
 	}
 }
 
+.topbar--in-sidebar {
+	display: none;
+}
+
 
 
 
@@ -211,12 +218,12 @@ main {
 }
 
 .stats__title-space:after {
-	position:absolute;
-	left:0;
+	position: absolute;
+	left: 0;
 	right: 0;
 	top: 50px;
 	content: " ";
-    display:block;
+	display: block;
 	border-bottom: 1px solid #999;
 }
 
@@ -234,12 +241,12 @@ main {
 }
 
 .stats__date-selection:after {
-	position:absolute;
-	left:0;
+	position: absolute;
+	left: 0;
 	right: 0;
 	top: 140px;
 	content: " ";
-    display:block;
+	display: block;
 	border-bottom: 1px solid #999;
 }
 
@@ -383,4 +390,71 @@ main {
 
 .links__icon-trash {
 	color: #444;
+}
+
+
+
+
+@media(max-width: 767px) {
+	.topbar {
+		display: none;
+	}
+
+	main {
+		top: 0;
+		left: 0;
+	}
+
+	.sidebar {
+		z-index: 1;
+		left: -200px;
+		top:0;
+		bottom: 0;
+		transition: all 1s;
+	}
+
+	.sidebar__hamburger {
+		display: block;
+		position: absolute;
+		left: 200px;
+		color: #000;
+		transition: all 1s;
+	}
+
+	.topbar--in-sidebar {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		position: relative;
+		background: #000;
+		color: #aaa;
+		left:0;
+		bottom: 0;
+		margin-top: 40px;
+		border: none;
+		
+	}
+
+	.topbar__field--in-sidebar {
+		border-top: 1px solid #555;
+		border-left: none;
+		
+		&:hover {
+		background: #555;
+		}
+
+		&:last-of-type {
+			border-bottom: 1px solid #555;
+		}
+	}
+
+	// checkbox hack for CSS-only click event simulation on navbar
+
+	#btnControl {
+		display: none;
+	}
+
+	#btnControl:checked+label>.sidebar {
+		left: 0;
+	}
 }

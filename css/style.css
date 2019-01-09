@@ -780,16 +780,17 @@ body {
 
 main {
   position: fixed;
-  top: 80px;
+  top: 60px;
   bottom: 0;
   left: 220px;
-  right: 20px;
+  right: 0px;
   background: #ccc;
   padding: 10px;
   overflow: auto;
 }
 
-.stats, .links {
+.stats,
+.links {
   background: #fff;
 }
 
@@ -804,7 +805,7 @@ main {
   color: #aaa;
 }
 
-.sidebar__top-bar {
+.sidebar__top-part {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
@@ -932,6 +933,10 @@ main {
 
 .topbar__field:hover {
   background: #ddd;
+}
+
+.topbar--in-sidebar {
+  display: none;
 }
 
 /*** STATS ***/
@@ -1128,5 +1133,59 @@ main {
 
 .links__icon-trash {
   color: #444;
+}
+
+@media (max-width: 767px) {
+  .topbar {
+    display: none;
+  }
+  main {
+    top: 0;
+    left: 0;
+  }
+  .sidebar {
+    z-index: 1;
+    left: -200px;
+    top: 0;
+    bottom: 0;
+    transition: all 1s;
+  }
+  .sidebar__hamburger {
+    display: block;
+    position: absolute;
+    left: 200px;
+    color: #000;
+    transition: all 1s;
+  }
+  .topbar--in-sidebar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    height: auto;
+    position: relative;
+    background: #000;
+    color: #aaa;
+    left: 0;
+    bottom: 0;
+    margin-top: 40px;
+    border: none;
+  }
+  .topbar__field--in-sidebar {
+    border-top: 1px solid #555;
+    border-left: none;
+  }
+  .topbar__field--in-sidebar:hover {
+    background: #555;
+  }
+  .topbar__field--in-sidebar:last-of-type {
+    border-bottom: 1px solid #555;
+  }
+  #btnControl {
+    display: none;
+  }
+  #btnControl:checked + label > .sidebar {
+    left: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */
