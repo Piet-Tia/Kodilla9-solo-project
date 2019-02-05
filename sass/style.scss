@@ -19,10 +19,9 @@
 @mixin button-class {
 	display: inline-block;
 	border-radius: 4px;
-	padding: 5px 10px;
+	padding: 10px;
 	border: 1px solid darkorange;
 }
-
 
 
 .button {
@@ -50,7 +49,7 @@
 
 body {
 	font-family: $paragraph-font;
-	background: #ccc;
+	background: #f5f5f2;
 }
 
 main {
@@ -59,7 +58,7 @@ main {
 	bottom: 0;
 	left: 220px;
 	right: 0px;
-	background: #ccc;
+	background: #f5f5f2;
 	padding: 10px;
 	overflow: auto;
 }
@@ -88,7 +87,7 @@ main {
 }
 
 .sidebar__logo {
-	padding: 10px;
+	padding: 15px;
 	font-size: 20px;
 	color: #fff;
 	display: flex;
@@ -98,28 +97,43 @@ main {
 
 .sidebar__hamburger {
 	padding: 10px;
-	color: #ccc;
-	font-size: 16px;
+	color: #999999;
+	font-size: 18px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.sidebar__nav-link {
+.main-menu {
+	list-style-type: none;
+	padding-left: 0;
+	
+}
+.main-menu__nav-link {
 	padding: 10px;
 	font-size: 14px;
 	font-weight: 100;
 	border-left: 5px solid #000;
 
+	> a {
+		text-decoration: none;
+		color: #999999;
+
+		> i {
+			padding-right: 10px;
+		}
+	}
+
 	&:hover {
 		border-left: 5px solid orange;
-		background: #555;
-		color: #fff;
+		background: #282828;
+		
+		> a {
+			color: #e2e2e2;
+		}
 	}
-}
 
-.sidebar__nav-link>i {
-	padding-right: 10px;
+
 }
 
 .sidebar__footer {
@@ -175,11 +189,12 @@ main {
 	left: 200px;
 	right: 0;
 	height: 60px;
-	background: #eee;
+	background: #ffffff;
 	display: flex;
 	justify-content: flex-end;
 	color: #555;
-	border: 1px solid #999;
+	border: 1px solid #e3e3e3;
+	margin: 0;
 }
 
 .topbar__field {
@@ -188,7 +203,7 @@ main {
 	align-items: center;
 	height: 100%;
 	padding: 20px;
-	border-left: 1px solid #999;
+	border-left: 1px solid #e3e3e3;
 	cursor: pointer;
 
 	i {
@@ -200,8 +215,21 @@ main {
 	}
 }
 
+.topbar__wallet {
+	font-size: 20px;
+}
+
+.topbar__user {
+	color: #6d92ac;
+}
+
 .topbar--in-sidebar {
 	display: none;
+}
+
+.icon-arrow-down-small {
+	font-size: 12px;
+	margin-left: 20px;
 }
 
 
@@ -224,7 +252,7 @@ main {
 	top: 50px;
 	content: " ";
 	display: block;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #e3e3e3;
 }
 
 .stats__title {
@@ -247,7 +275,7 @@ main {
 	top: 140px;
 	content: " ";
 	display: block;
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #e3e3e3;
 }
 
 .stats__date-selection-window {
@@ -255,7 +283,7 @@ main {
 	justify-content: space-between;
 	width: 400px;
 	padding: 5px 20px;
-	border: 1px solid #999;
+	border: 1px solid #e3e3e3;
 	border-radius: 4px;
 }
 
@@ -264,19 +292,23 @@ main {
 }
 
 .stats__date--end {
-	border-left: 1px solid #999;
+	border-left: 1px solid #e3e3e3;
 }
 
 
 .stats__refresh-icon {
-	margin: 0 10px;
-	padding: 10px;
+	margin: 0 5px;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /*** STATS -> CALENDAR-ICON ***/
 
 [class^=calendar-icon__button] {
-	border-bottom: 1px solid #777;
+	border-bottom: 1px solid #9b9b9b;
 }
 
 .calendar-icon {
@@ -292,7 +324,7 @@ main {
 .calendar-icon__button--big {
 	width: 17px;
 	height: 4px;
-	border: 1px solid #777;
+	border: 1px solid #9b9b9b;
 }
 
 .calendar-icon__button {
@@ -313,10 +345,15 @@ main {
 }
 
 .stats__row {
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid #e3e3e3;
 	display: flex;
 	justify-content: space-between;
 	padding: 2px;
+	color: #a6a6a6;
+}
+
+.stats__number {
+	color: #333333;
 }
 
 /*** STATS__CHART ***/
@@ -330,12 +367,29 @@ main {
 
 .stats__chart-title {
 	font-weight: 900;
-	color: #555;
+	color: #a6a6a6;
 	padding: 20px 0;
 	align-self: flex-start;
 }
 
 /*** LINKS ***/
+.links {
+	position: relative;
+}
+
+.links__title-space {
+	margin-bottom: 20px;
+}
+
+.links__title-space:after {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50px;
+	content: " ";
+	display: block;
+	border-bottom: 1px solid #e3e3e3;
+}
 
 .links__row {
 	display: flex;
@@ -344,7 +398,7 @@ main {
 	transition: 0.2s;
 
 	&:hover {
-		background: #ccc;
+		background: #f1f3f3;
 
 		.links__right-column {
 			opacity: 1;
@@ -361,6 +415,7 @@ main {
 .links__left-column {
 	width: 400px;
 	font-weight: 600;
+	color: #a6a6a6;
 }
 
 .links__middle-column {
@@ -369,7 +424,7 @@ main {
 
 .links__links {
 	text-decoration: none;
-	color: #000;
+	color: #668ca5;
 }
 
 .links__right-column {
@@ -379,7 +434,7 @@ main {
 	opacity: 0;
 	transition: 0.2s;
 
-	>span {
+	>a {
 		cursor: pointer;
 	}
 }
@@ -434,7 +489,7 @@ main {
 		border: none;
 	}
 
-	.sidebar__nav-link {
+	.main-menu__nav-link {
 		padding: 5px;
 	}
 

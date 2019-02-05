@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
 	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -17,17 +18,22 @@
 
 		<nav class='sidebar'>
 			<div class="sidebar__top-part">
-				<div class="sidebar__logo">Just do it</div>
+				<div class="sidebar__logo">
+					<img alt="Just Do It logo" src="images/logo.png">
+				</div>
 				<div class="sidebar__hamburger"><i class="fas fa-bars"></i></div>
 			</div>
 			<div class="sidebar__main-section">
-				<div class="sidebar__nav-link"><i class='icon-general'></i>General</div>
-				<div class="sidebar__nav-link"><i class='icon-details'></i>Details</div>
-				<div class="sidebar__nav-link"><i class='icon-links'></i>Links</div>
-				<div class="sidebar__nav-link"><i class='icon-banners'></i>Banners</div>
-				<div class="sidebar__nav-link"><i class='icon-personaldata'></i>Personal data</div>
-				<div class="sidebar__nav-link"><i class='icon-payout'></i>Payout</div>
-				<div class="sidebar__nav-link"><i class='icon-postback'></i>Postback</div>
+				<ul class="main-menu">
+					<!-- tutaj nie bylo tego li, byl div nad i male divy pod -->
+					<li class="main-menu__nav-link"><a href="#"><i class='icon-general'></i>General</a></li>
+					<li class="main-menu__nav-link"><a href="#"><i class='icon-details'></i>Details</a></li>
+					<li class="main-menu__nav-link"><a href="#"><i class='icon-links'></i>Links</a></li>
+					<li class="main-menu__nav-link"><a href="#"><i class='icon-banners'></i>Banners</a></li>
+					<li class="main-menu__nav-link"><a href="#"><i class='icon-personaldata'></i>Personal data</a></li>
+					<li class="main-menu__nav-link"><a href="#"><i class='icon-payout'></i>Payout</a></li>
+					<li class="main-menu__nav-link"><a href="#"><i class='icon-postback'></i>Postback</a></li>
+				</ul>
 			</div>
 			<div class="sidebar__footer">
 				<div class="sidebar__footer-title">Your manager</div>
@@ -47,12 +53,12 @@
 
 	</label>
 
-	<div class="topbar">
-		<div class="topbar__field topbar__wallet"><i class='icon-wallet'></i>$1,500.00<i class='icon-arrow-down-small'></i></div>
-		<div class="topbar__field topbar__notifications"><i class='icon-notification'></i></div>
-		<div class="topbar__field topbar__user"><i class='icon-profile'></i>Leonardo Dicaprio</div>
-		<div class="topbar__field topbar__logout"><i class='icon-quit'></i></div>
-	</div>
+	<ul class="topbar">
+		<li class="topbar__field topbar__wallet"><i class='icon-wallet'></i>$1,500.00<i class='icon-arrow-down-small'></i></li>
+		<li class="topbar__field topbar__notifications"><i class='icon-notification'></i></li>
+		<li class="topbar__field topbar__user"><i class='icon-profile'></i>Leonardo Dicaprio</li>
+		<li class="topbar__field topbar__logout"><i class='icon-quit'></i></li>
+	</ul>
 
 	<main>
 		<div class="container stats">
@@ -118,8 +124,11 @@
 		</div>
 
 		<div class="container links">
+			<div class='stats__title-space'>
+				<span class=stats__title>Links</span>
+			</div>
 			<div class='button-space'>
-				<div class="button--orange">+ add new</div>
+				<button class="button--orange">+ add new</button>
 			</div>
 			<div class="links__row">
 				<span class="links__left-column">Home page</span>
@@ -127,8 +136,8 @@
 					<a href="#" class="links__links">http://www.homepage.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -137,8 +146,8 @@
 					<a href="#" class="links__links">http://www.currently.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -147,8 +156,8 @@
 					<a href="#" class="links__links">http://www.blurpix.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -157,8 +166,8 @@
 					<a href="#" class="links__links">http://www.yoursite.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -167,8 +176,8 @@
 					<a href="#" class="links__links">http://www.google.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -177,8 +186,8 @@
 					<a href="#" class="links__links">http://www.facebook.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -187,8 +196,8 @@
 					<a href="#" class="links__links">http://www.dashboard.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -197,8 +206,8 @@
 					<a href="#" class="links__links">http://www.blurax.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -207,8 +216,8 @@
 					<a href="#" class="links__links">http://www.pieceofwine.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class="links__row">
@@ -217,12 +226,12 @@
 					<a href="#" class="links__links">http://www.twitter.com</a>
 				</span>
 				<span class="links__right-column">
-					<span class="links__icon-links icon-links"></span>
-					<span class="links__icon-trash icon-trash"></span>
+					<a class="links__icon-links icon-links"></a>
+					<a class="links__icon-trash icon-trash"></a>
 				</span>
 			</div>
 			<div class='button-space'>
-				<div class="button--orange">+ add new</div>
+				<button class="button--orange">+ add new</button>
 			</div>
 		</div>
 	</main>
